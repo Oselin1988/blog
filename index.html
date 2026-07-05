@@ -5,6 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blog – LD WORLD GLOBAL</title>
   <meta name="description" content="Expert insights on antimicrobial resistance, bioinformatics, AI in research, and academic publishing.">
+
+  <!-- JavaScript Protection: Disable right-click and keyboard shortcuts -->
+  <script>
+    // Disable right-click
+    document.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+      alert('Right-click is disabled on this site to protect content.');
+    });
+
+    // Disable keyboard shortcuts (Ctrl+C, Ctrl+U, Ctrl+S, Ctrl+A, Ctrl+P)
+    document.addEventListener('keydown', function(e) {
+      if (e.ctrlKey && (e.key === 'c' || e.key === 'u' || e.key === 's' || e.key === 'a' || e.key === 'p')) {
+        e.preventDefault();
+        alert('Keyboard shortcuts are disabled on this site to protect content.');
+      }
+    });
+  </script>
+
   <style>
     * {
       margin: 0;
@@ -157,6 +175,29 @@
       vertical-align: middle;
       margin-right: 8px;
     }
+    .footer-cc {
+      margin-top: 10px;
+      font-size: 0.85rem;
+    }
+    .footer-cc img {
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 5px;
+    }
+    .footer-cc a {
+      color: #a0c4e0;
+      text-decoration: none;
+    }
+    .footer-cc a:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
+    .footer-dmca {
+      margin-top: 10px;
+    }
+    .footer-dmca img {
+      vertical-align: middle;
+    }
 
     @media (max-width: 600px) {
       .blog-header h1 { font-size: 2rem; }
@@ -168,12 +209,14 @@
 </head>
 <body>
 
+<!-- HEADER -->
 <header class="blog-header">
   <div class="container">
     <img src="logo.png" alt="LD WORLD GLOBAL Logo" class="logo">
     <h1>📝 LD WORLD GLOBAL Blog</h1>
     <p class="subtitle">Expert insights on <strong>antimicrobial resistance (AMR), bioinformatics, AI in research, academic publishing</strong>, and more.</p>
 
+    <!-- Author Bio -->
     <div class="author-bio">
       <img src="Linda.jpg" alt="Linda Osaghale">
       <div class="author-text">
@@ -188,6 +231,7 @@
   </div>
 </header>
 
+<!-- BLOG POSTS -->
 <main class="container">
 
   <article class="blog-post">
@@ -224,17 +268,6 @@
   </article>
 
   <article class="blog-post">
-    <h2><a href="#">How to Write a Strong Statement of Purpose (SOP)</a></h2>
-    <div class="meta">
-      <span>📅 1 July 2026</span>
-      <span>🏷️ Scholarship</span>
-      <span>⏱️ 8 min read</span>
-    </div>
-    <p>A well-crafted Statement of Purpose can make or break your scholarship or PhD application. Here's a step-by-step guide to writing one that stands out.</p>
-    <a href="#" class="read-more">Read Full Article →</a>
-  </article>
-
-  <article class="blog-post">
     <h2><a href="#">How to Choose the Right Journal for Your Research</a></h2>
     <div class="meta">
       <span>📅 30 June 2026</span>
@@ -247,13 +280,38 @@
 
 </main>
 
+<!-- FOOTER -->
 <footer>
   <div class="container">
+    <!-- Copyright -->
     <p>
       <img src="logo.png" alt="LD WORLD GLOBAL Logo" class="footer-logo">
       © 2026 LD WORLD GLOBAL. All rights reserved.
     </p>
-    <p style="margin-top:8px; font-size:0.85rem;">
+
+    <!-- DMCA Badge -->
+    <div class="footer-dmca">
+      <a href="https://www.dmca.com/r/0yq1yzy" target="_blank" 
+         title="DMCA.com Protection Status">
+        <img src="https://images.dmca.com/Badges/dmca-badge.png?ID=0yq1yzy" 
+             alt="DMCA.com Protection Status" />
+      </a>
+    </div>
+
+    <!-- Creative Commons License -->
+    <div class="footer-cc">
+      <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+        <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" />
+      </a>
+      <br>
+      This work is licensed under a
+      <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+        Creative Commons Attribution 4.0 International License
+      </a>.
+    </div>
+
+    <!-- Navigation Links -->
+    <p style="margin-top:15px; font-size:0.85rem;">
       <a href="https://researchacademy.uk">Home</a> &nbsp;·&nbsp;
       <a href="https://blog.researchacademy.uk">Blog</a> &nbsp;·&nbsp;
       <a href="mailto:contact@researchacademy.uk">Contact</a>
