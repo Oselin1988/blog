@@ -1,0 +1,146 @@
+# ============================================
+# ANTIMICROBIAL RESISTANCE (AMR) FIGURES
+# For your AMR Blog Post
+# Generates two JPGs < 1MB each
+# Data source: GRAM Project / The Lancet (2024)
+# ============================================
+
+import matplotlib.pyplot as plt
+import numpy as np
+import os
+
+# ----- FIGURE 1: AMR DEATHS TREND (1990-2050) -----
+
+# Data from GRAM Project / The Lancet
+years_trend = [1990, 2019, 2021, 2050]
+attributable = [1.06, 1.27, 1.14, 1.91]  # millions
+associated = [3.60, 4.95, 4.71, 8.22]    # millions
+
+# Create smooth interpolation for 1990-2050
+years_smooth = np.linspace(1990, 2050, 100)
+attributable_smooth = np.interp(years_smooth, years_trend, attributable)
+associated_smooth = np.interp(years_smooth, years_trend, associated)
+
+# Create figure
+fig1, ax1 = plt.subplots(figsize=(10, 6), dpi=100)
+
+# Plot lines
+ax1.plot(years_smooth, attributable_smooth,
+         color='#d62728', linewidth=4, label='Attributable to AMR')
+ax1.plot(years_smooth, associated_smooth,
+         color='#ff7f0e', linewidth=4, linestyle='--', label='Associated with AMR')
+
+# Add data points
+ax1.scatter(years_trend, attributable, color='#d62728', s=80, zorder=5)
+ax1.scatter(years_trend, associated, color='#ff7f0e', s=80, zorder=5)
+
+# Annotate key milestones
+annotations = [
+    (1990, 1.06, '1.06M'),
+    (2019, 1.27, '1.27M'),
+    (2021, 1.14, '1.14M'),
+    (2050, 1.91, '1.91M'),
+]
+for year, value, label in annotations:
+    ax1.annotate(label,
+                 xy=(year, value),
+                 xytext=(year, value + 0.15),
+                 ha='center',
+                 fontsize=10,
+                 fontweight='bold',
+                 color='#d62728')
+
+# Styling
+ax1.set_title('The Rising Tide of AMR Deaths (1990–2050)',
+              fontsize=16, fontweight='bold', pad=20)
+ax1.set_xlabel('Year', fontsize=12, labelpad=10)
+ax1.set_ylabel('Deaths (Millions)', fontsize=12, labelpad=10)
+ax1.set_ylim(0, 9.5)
+ax1.set_xlim(1988, 2052)
+
+# Add a shaded warning zone for 2050 projection
+ax1.axvspan(2045, 2052, alpha=0.1, color='red', label='Projected')
+
+# Legend
+ax1.legend(loc='upper left', fontsize=11, frameon=True, shadow=True)
+
+# Remove top and right spines
+ax1.spines['top'].set_visible(False)
+ax1.spines['right'].set_visible(False)
+
+# Source note
+ax1.text(0.02, -0.12,
+         'Source: GRAM Project / The Lancet (2024)',
+         transform=ax1.transAxes, fontsize=9, color='gray', ha='left')
+
+plt.tight_layout()
+
+# ----- SAVE FIGURE 1 AS amr-figure.jpg (FIXED: removed 'quality') -----
+output_file1 = 'amr-figure.jpg'
+plt.savefig(output_file1, dpi=100, bbox_inches='tight',
+            pad_inches=0.5, format='jpeg', facecolor='white')
+plt.show()
+
+# ----- FIGURE 2: AMR DEATHS BY REGION (2050) -----
+
+# Regional data for 2050 from IHME/GRAM forecasts
+regions = ['South Asia', 'SE Asia, East Asia\n& Oceania', 'Sub-Saharan\nAfrica',
+           'Latin America &\nCaribbean', 'North Africa &\nMiddle East',
+           'Europe', 'North America']
+deaths_2050 = [629, 386, 325, 200, 150, 100, 80]  # thousands
+
+# Sort by value for better visualization
+sorted_indices = np.argsort(deaths_2050)[::-1]
+regions_sorted = [regions[i] for i in sorted_indices]
+deaths_sorted = [deaths_2050[i] for i in sorted_indices]
+
+# Color gradient (darker = more deaths)
+colors = plt.cm.Reds(np.linspace(0.4, 0.9, len(regions_sorted)))
+
+fig2, ax2 = plt.subplots(figsize=(10, 6), dpi=100)
+
+# Horizontal bar chart
+bars = ax2.barh(regions_sorted, deaths_sorted, color=colors, height=0.6)
+
+# Add value labels at the end of each bar
+for bar, value in zip(bars, deaths_sorted):
+    ax2.text(bar.get_width() + 10, bar.get_y() + bar.get_height()/2,
+             f'{value:,}', va='center', fontsize=11, fontweight='bold')
+
+# Styling
+ax2.set_title('Projected AMR Deaths by Region in 2050',
+              fontsize=16, fontweight='bold', pad=20)
+ax2.set_xlabel('Deaths (Thousands)', fontsize=12, labelpad=10)
+
+# Remove top and right spines
+ax2.spines['top'].set_visible(False)
+ax2.spines['right'].set_visible(False)
+
+# Add a vertical line at 629k (South Asia) for reference
+ax2.axvline(x=629, color='gray', linestyle='--', alpha=0.5, linewidth=1)
+
+# Source note
+ax2.text(0.02, -0.12,
+         'Source: IHME / GRAM Project forecasts (2024)',
+         transform=ax2.transAxes, fontsize=9, color='gray', ha='left')
+
+plt.tight_layout()
+
+# ----- SAVE FIGURE 2 AS amr-figure-regional.jpg (FIXED: removed 'quality') -----
+output_file2 = 'amr-figure-regional.jpg'
+plt.savefig(output_file2, dpi=100, bbox_inches='tight',
+            pad_inches=0.5, format='jpeg', facecolor='white')
+plt.show()
+
+# ----- CHECK FILE SIZES -----
+
+def check_size(filename):
+    size_bytes = os.path.getsize(filename)
+    size_kb = size_bytes / 1024
+    size_mb = size_kb / 1024
+    status = "✅ Under 1MB" if size_mb < 1 else "⚠️ Over 1MB"
+    print(f"{filename}: {size_kb:.2f} KB ({size_mb:.2f} MB) {status}")
+
+print("\n📁 File Size Report:")
+check_size(output_file1)
+check_size(output_file2)
