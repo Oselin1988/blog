@@ -4,6 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- ===== JAVASCRIPT PROTECTION (RIGHT-CLICK + KEYBOARD) ===== -->
+  <script>
+    document.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+      alert('Right-click is disabled on this site to protect content.');
+    });
+
+    document.addEventListener('keydown', function(e) {
+      if (e.ctrlKey && (e.key === 'c' || e.key === 'u' || e.key === 's' || e.key === 'a' || e.key === 'p')) {
+        e.preventDefault();
+        alert('Keyboard shortcuts are disabled on this site to protect content.');
+      }
+    });
+  </script>
+
   <!-- ===== PRIMARY SEO ===== -->
   <title>The 50 Million People Question: Are We Missing the Genetic Truth About Alzheimer's? – LD WORLD GLOBAL</title>
   <meta name="description" content="Why most Alzheimer's genetic studies get it wrong and how our replication-first approach fixed it. Learn about APOE, replication, and hidden genes.">
@@ -16,7 +31,7 @@
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="LD WORLD GLOBAL Blog">
 
-  <!-- ===== FIXED: IMAGE IN SAME REPOSITORY ===== -->
+  <!-- ===== IMAGE IN SAME REPOSITORY ===== -->
   <meta property="og:image" content="alzheimers-post-1-og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -28,8 +43,6 @@
   <meta name="twitter:creator" content="@YourTwitterHandle">
   <meta name="twitter:title" content="The 50 Million People Question: Are We Missing the Genetic Truth About Alzheimer's?">
   <meta name="twitter:description" content="Why most Alzheimer's genetic studies get it wrong and how our replication-first approach fixed it.">
-
-  <!-- ===== FIXED: IMAGE IN SAME REPOSITORY ===== -->
   <meta name="twitter:image" content="alzheimers-post-1-og-image.png">
   <meta name="twitter:image:alt" content="Blog post: The 50 Million People Question – Alzheimer's Genetics Research">
 
