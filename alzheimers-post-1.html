@@ -4,6 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- ===== SITE PROTECTION ===== -->
+  <script>
+    document.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+      alert('Right-click is disabled on this site to protect content.');
+    });
+
+    document.addEventListener('keydown', function(e) {
+      if (e.ctrlKey && (e.key === 'c' || e.key === 'u' || e.key === 's' || e.key === 'a' || e.key === 'p')) {
+        e.preventDefault();
+        alert('Keyboard shortcuts are disabled on this site to protect content.');
+      }
+    });
+  </script>
+
   <!-- ===== PRIMARY SEO ===== -->
   <title>The 50 Million People Question: Are We Missing the Genetic Truth About Alzheimer's? – LD WORLD GLOBAL</title>
   <meta name="description" content="Why most Alzheimer's genetic studies get it wrong and how our replication-first approach fixed it. Learn about APOE, replication, and hidden genes.">
@@ -15,8 +30,6 @@
   <meta property="og:url" content="https://blog.researchacademy.uk/alzheimers-post-1.html">
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="LD WORLD GLOBAL Blog">
-
-  <!-- ===== FIXED: IMAGE IN SAME REPOSITORY ===== -->
   <meta property="og:image" content="alzheimers-post-1-og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -28,12 +41,10 @@
   <meta name="twitter:creator" content="@YourTwitterHandle">
   <meta name="twitter:title" content="The 50 Million People Question: Are We Missing the Genetic Truth About Alzheimer's?">
   <meta name="twitter:description" content="Why most Alzheimer's genetic studies get it wrong and how our replication-first approach fixed it.">
-
-  <!-- ===== FIXED: IMAGE IN SAME REPOSITORY ===== -->
   <meta name="twitter:image" content="alzheimers-post-1-og-image.png">
   <meta name="twitter:image:alt" content="Blog post: The 50 Million People Question – Alzheimer's Genetics Research">
 
-  <!-- ===== JSON-LD STRUCTURED DATA ===== -->
+  <!-- ===== JSON-LD STRUCTURED DATA (GOOGLE RICH RESULTS) ===== -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -87,6 +98,8 @@
     .share-buttons p { font-weight: 600; margin-bottom: 15px; color: #1B3A5C; }
     .share-buttons .btn-group { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
     .share-buttons .btn { display: inline-block; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: 600; transition: background 0.2s; border: none; cursor: pointer; font-size: 0.95rem; }
+
+    /* Button Colors */
     .share-buttons .btn-twitter { background: #000; color: #fff; }
     .share-buttons .btn-twitter:hover { background: #333; }
     .share-buttons .btn-facebook { background: #1877F2; color: #fff; }
@@ -99,6 +112,23 @@
     .share-buttons .btn-instagram:hover { opacity: 0.9; }
     .share-buttons .btn-copy { background: #2A9D8F; color: #fff; }
     .share-buttons .btn-copy:hover { background: #1f7a6e; }
+    .share-buttons .btn-youtube { background: #FF0000; color: #fff; }
+    .share-buttons .btn-youtube:hover { background: #cc0000; }
+    .share-buttons .btn-reddit { background: #FF4500; color: #fff; }
+    .share-buttons .btn-reddit:hover { background: #cc3700; }
+    .share-buttons .btn-threads { background: #000; color: #fff; }
+    .share-buttons .btn-threads:hover { background: #333; }
+    .share-buttons .btn-pinterest { background: #E60023; color: #fff; }
+    .share-buttons .btn-pinterest:hover { background: #cc001f; }
+    .share-buttons .btn-telegram { background: #0088cc; color: #fff; }
+    .share-buttons .btn-telegram:hover { background: #0077b3; }
+    .share-buttons .btn-email { background: #6c757d; color: #fff; }
+    .share-buttons .btn-email:hover { background: #5a6268; }
+    .share-buttons .btn-bluesky { background: #1185fe; color: #fff; }
+    .share-buttons .btn-bluesky:hover { background: #0e6fd6; }
+    .share-buttons .btn-mastodon { background: #6364ff; color: #fff; }
+    .share-buttons .btn-mastodon:hover { background: #4a4bd6; }
+
     footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee; color: #8aaec9; font-size: 0.9rem; text-align: center; }
     .footer-citation { font-size: 0.8rem; color: #8aaec9; margin-top: 5px; }
     .footer-citation a { color: #2A9D8F; text-decoration: none; }
@@ -255,12 +285,49 @@
   <div class="share-buttons">
     <p>📤 Share This Article</p>
     <div class="btn-group">
+
+      <!-- Twitter / X -->
       <a href="https://twitter.com/intent/tweet?text=The%2050%20Million%20People%20Question%3A%20Are%20We%20Missing%20the%20Genetic%20Truth%20About%20Alzheimer%27s%3F&url=https://blog.researchacademy.uk/alzheimers-post-1.html" target="_blank" class="btn btn-twitter">🐦 Twitter / X</a>
+
+      <!-- Facebook -->
       <a href="https://www.facebook.com/sharer/sharer.php?u=https://blog.researchacademy.uk/alzheimers-post-1.html" target="_blank" class="btn btn-facebook">📘 Facebook</a>
+
+      <!-- LinkedIn -->
       <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://blog.researchacademy.uk/alzheimers-post-1.html" target="_blank" class="btn btn-linkedin">🔗 LinkedIn</a>
+
+      <!-- WhatsApp -->
       <a href="https://api.whatsapp.com/send?text=The%2050%20Million%20People%20Question%3A%20Are%20We%20Missing%20the%20Genetic%20Truth%20About%20Alzheimer%27s%3F%20https://blog.researchacademy.uk/alzheimers-post-1.html" target="_blank" class="btn btn-whatsapp">📱 WhatsApp</a>
+
+      <!-- Instagram (Copies Link & Opens Instagram) -->
       <button onclick="shareInstagram()" class="btn btn-instagram">📸 Instagram</button>
+
+      <!-- Copy Link -->
       <button onclick="copyLink()" class="btn btn-copy">📋 Copy Link</button>
+
+      <!-- YouTube -->
+      <a href="https://www.youtube.com/channel/UCNVH3B1UL8wxqJwx-4xPHbQ" target="_blank" class="btn btn-youtube">▶️ YouTube</a>
+
+      <!-- Reddit -->
+      <a href="https://www.reddit.com/submit?url=https://blog.researchacademy.uk/alzheimers-post-1.html&title=The%2050%20Million%20People%20Question%3A%20Are%20We%20Missing%20the%20Genetic%20Truth%20About%20Alzheimer%27s%3F" target="_blank" class="btn btn-reddit">🤖 Reddit</a>
+
+      <!-- Threads -->
+      <a href="https://www.threads.net/intent/post?text=The%2050%20Million%20People%20Question%3A%20Are%20We%20Missing%20the%20Genetic%20Truth%20About%20Alzheimer%27s%3F%20https://blog.researchacademy.uk/alzheimers-post-1.html" target="_blank" class="btn btn-threads">🧵 Threads</a>
+
+      <!-- Pinterest -->
+      <a href="https://pinterest.com/pin/create/button/?url=https://blog.researchacademy.uk/alzheimers-post-1.html&media=https://blog.researchacademy.uk/images/alzheimers-post-1-og-image.png&description=The%2050%20Million%20People%20Question%3A%20Are%20We%20Missing%20the%20Genetic%20Truth%20About%20Alzheimer%27s%3F" target="_blank" class="btn btn-pinterest">📌 Pinterest</a>
+
+      <!-- Telegram -->
+      <a href="https://t.me/share/url?url=https://blog.researchacademy.uk/alzheimers-post-1.html&text=The%2050%20Million%20People%20Question%3A%20Are%20We%20Missing%20the%20Genetic%20Truth%20About%20Alzheimer%27s%3F" target="_blank" class="btn btn-telegram">✈️ Telegram</a>
+
+      <!-- Email -->
+      <a href="mailto:?subject=The%2050%20Million%20People%20Question%3A%20Are%20We%20Missing%20the%20Genetic%20Truth%20About%20Alzheimer%27s%3F&body=Check%20out%20this%20article%3A%20https://blog.researchacademy.uk/alzheimers-post-1.html" class="btn btn-email">✉️ Email</a>
+
+      <!-- Bluesky -->
+      <a href="https://bsky.app/intent/compose?text=The%2050%20Million%20People%20Question%3A%20Are%20We%20Missing%20the%20Genetic%20Truth%20About%20Alzheimer%27s%3F%20https://blog.researchacademy.uk/alzheimers-post-1.html" target="_blank" class="btn btn-bluesky">🦋 Bluesky</a>
+
+      <!-- Mastodon -->
+      <a href="https://mastodon.social/share?text=The%2050%20Million%20People%20Question%3A%20Are%20We%20Missing%20the%20Genetic%20Truth%20About%20Alzheimer%27s%3F%20https://blog.researchacademy.uk/alzheimers-post-1.html" target="_blank" class="btn btn-mastodon">🐘 Mastodon</a>
+
     </div>
   </div>
 
