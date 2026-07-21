@@ -52,64 +52,78 @@
     }
     .container { max-width: 800px; margin: 0 auto; padding: 0 20px; }
 
-    .blog-header {
+    .article-header {
       background: #1B3A5C;
       color: #fff;
-      padding: 40px 0 30px;
+      padding: 40px 0 20px;
       text-align: center;
     }
-    .blog-header .logo { width: 60px; height: auto; display: block; margin: 0 auto 10px; }
-    .blog-header h1 { font-size: 2.5rem; font-weight: 700; margin-bottom: 0.5rem; }
-    .blog-header .subtitle { font-size: 1.1rem; color: #a0c4e0; max-width: 600px; margin: 0 auto; }
-    .blog-header a { color: #2A9D8F; text-decoration: none; font-weight: 600; }
-    .blog-header a:hover { text-decoration: underline; }
-
-    .author-bio {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      justify-content: center;
-      max-width: 600px;
-      margin: 15px auto 0;
-      padding: 15px 20px;
-      background: rgba(255,255,255,0.1);
-      border-radius: 10px;
+    .article-header .logo {
+      width: 60px;
+      height: auto;
+      display: block;
+      margin: 0 auto 10px;
     }
-    .author-bio img { width: 50px; height: 50px; border-radius: 50%; border: 3px solid #2A9D8F; object-fit: cover; }
-    .author-bio .author-text { text-align: left; font-size: 0.9rem; color: #d0e4f0; }
-    .author-bio .author-text strong { color: #fff; }
-    .author-bio .author-text p { margin: 2px 0 0; font-size: 0.85rem; color: #a0c4e0; }
+    .article-header h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    .article-header .meta {
+      font-size: 0.9rem;
+      color: #a0c4e0;
+    }
+    .article-header a { color: #2A9D8F; text-decoration: none; }
+    .article-header a:hover { text-decoration: underline; }
 
-    .article-content {
+    .article-body {
       background: #fff;
+      padding: 40px 35px;
       border-radius: 12px;
-      padding: 40px;
       margin: 30px 0;
       box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     }
-    .article-content h1 { color: #1B3A5C; font-size: 2.2rem; margin-bottom: 0.5rem; }
-    .article-content h2 { color: #1B3A5C; font-size: 1.6rem; margin-top: 2rem; margin-bottom: 1rem; border-bottom: 3px solid #2A9D8F; padding-bottom: 0.5rem; }
-    .article-content h3 { color: #1B3A5C; font-size: 1.3rem; margin-top: 1.5rem; margin-bottom: 0.8rem; }
-    .article-content .meta { color: #8aaec9; font-size: 0.9rem; margin-bottom: 1.5rem; border-bottom: 1px solid #eee; padding-bottom: 1rem; }
-    .article-content .meta span { background: #f4f6f8; padding: 2px 10px; border-radius: 20px; margin-right: 5px; }
-    .article-content table { width: 100%; border-collapse: collapse; margin: 20px 0; }
-    .article-content th, .article-content td { border: 1px solid #ddd; padding: 10px; text-align: left; }
-    .article-content th { background: #1B3A5C; color: #fff; }
-    .article-content tr:nth-child(even) { background: #f9f9f9; }
-    .article-content .citation-box { background: #f0f4f8; padding: 15px 20px; border-radius: 8px; border-left: 4px solid #2A9D8F; margin: 20px 0; }
+    .article-body h1 { color: #1B3A5C; font-size: 2.2rem; margin-bottom: 0.5rem; }
+    .article-body h2 { color: #1B3A5C; font-size: 1.6rem; margin-top: 2rem; margin-bottom: 1rem; border-bottom: 3px solid #2A9D8F; padding-bottom: 0.5rem; }
+    .article-body h3 { color: #1B3A5C; font-size: 1.3rem; margin-top: 1.5rem; margin-bottom: 0.8rem; }
+    .article-body .meta { color: #8aaec9; font-size: 0.9rem; margin-bottom: 1.5rem; border-bottom: 1px solid #eee; padding-bottom: 1rem; }
+    .article-body .meta span { background: #f4f6f8; padding: 2px 10px; border-radius: 20px; margin-right: 5px; }
+    .article-body table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+    .article-body th, .article-body td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+    .article-body th { background: #1B3A5C; color: #fff; }
+    .article-body tr:nth-child(even) { background: #f9f9f9; }
+    .article-body .citation-box { background: #f0f4f8; padding: 15px 20px; border-radius: 8px; border-left: 4px solid #2A9D8F; margin: 20px 0; }
+    .article-body .citation-box a { color: #2A9D8F; text-decoration: none; }
+    .article-body .citation-box a:hover { text-decoration: underline; }
 
-    .share-buttons { margin: 30px 0; padding: 20px; background: #f0f4f8; border-radius: 10px; text-align: center; }
-    .share-buttons p { font-weight: 600; margin-bottom: 15px; color: #1B3A5C; }
-    .share-buttons .btn-group { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
-    .share-buttons .btn { display: inline-block; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: 600; transition: background 0.2s; border: none; cursor: pointer; font-size: 0.95rem; }
-    .share-buttons .btn-twitter { background: #000; color: #fff; }
-    .share-buttons .btn-twitter:hover { background: #333; }
-    .share-buttons .btn-facebook { background: #1877F2; color: #fff; }
-    .share-buttons .btn-facebook:hover { background: #1664d6; }
-    .share-buttons .btn-linkedin { background: #0A66C2; color: #fff; }
-    .share-buttons .btn-linkedin:hover { background: #0957a8; }
-    .share-buttons .btn-whatsapp { background: #25D366; color: #fff; }
-    .share-buttons .btn-whatsapp:hover { background: #1ebe57; }
+    .share-section {
+      margin: 30px 0 20px;
+      padding-top: 20px;
+      border-top: 2px solid #e8edf2;
+      text-align: center;
+    }
+    .share-section p {
+      font-weight: 600;
+      color: #1B3A5C;
+      margin-bottom: 10px;
+      font-size: 1.1rem;
+    }
+    .share-btn {
+      display: inline-block;
+      padding: 10px 20px;
+      margin: 5px 8px;
+      border-radius: 6px;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: background 0.2s;
+    }
+    .share-btn:hover { opacity: 0.8; }
+    .share-twitter { background: #1DA1F2; }
+    .share-linkedin { background: #0077B5; }
+    .share-facebook { background: #1877F2; }
+    .share-whatsapp { background: #25D366; }
 
     .reactions { text-align:center; padding:20px 0; border-top:1px solid #eee; border-bottom:1px solid #eee; margin:20px 0; }
     .reactions p { font-weight:600; color:#1B3A5C; margin-bottom:10px; }
@@ -125,19 +139,12 @@
       color: #8aaec9;
       text-align: center;
       padding: 20px 0;
-      border-top: 1px solid #2a4a6a;
       font-size: 0.9rem;
       margin-top: 40px;
     }
     footer a { color: #a0c4e0; text-decoration: none; }
     footer a:hover { color: #fff; }
     .footer-logo { width: 30px; height: auto; display: inline-block; vertical-align: middle; margin-right: 8px; }
-    .footer-cc { margin-top: 10px; font-size: 0.85rem; }
-    .footer-cc img { display: inline-block; vertical-align: middle; margin-right: 5px; }
-    .footer-cc a { color: #a0c4e0; text-decoration: none; }
-    .footer-cc a:hover { color: #fff; text-decoration: underline; }
-    .footer-dmca { margin-top: 10px; }
-    .footer-dmca img { vertical-align: middle; }
 
     #mc_embed_signup {
       background: transparent !important;
@@ -171,40 +178,29 @@
     #mc_embed_signup label { color: #fff; }
 
     @media (max-width: 600px) {
-      .blog-header h1 { font-size: 2rem; }
-      .article-content { padding: 20px; }
-      .author-bio { flex-direction: column; text-align: center; }
-      .author-bio .author-text { text-align: center; }
-      .share-buttons .btn { padding: 8px 15px; font-size: 0.85rem; }
+      .article-header h1 { font-size: 1.6rem; }
+      .article-body { padding: 25px 20px; }
+      .share-btn { padding: 8px 15px; margin: 4px 5px; font-size: 0.8rem; }
+      .reactions .emoji-group { font-size: 1.2rem; gap: 10px; }
     }
   </style>
 </head>
 <body>
 
-<!-- ===== HEADER ===== -->
-<header class="blog-header">
+<header class="article-header">
   <div class="container">
     <img src="logo.png" alt="LD WORLD GLOBAL Logo" class="logo">
-    <h1>📝 LD WORLD GLOBAL Blog</h1>
-    <p class="subtitle">Expert insights on <strong>antimicrobial resistance (AMR), bioinformatics, machine learning, AI in research, and academic publishing</strong>.</p>
-    <div class="author-bio">
-      <img src="Linda.jpg" alt="Linda Osaghale">
-      <div class="author-text">
-        <strong>Linda Osaghale</strong>
-        <p>Microbiologist • Bioinformatician • AI/ML Researcher</p>
-      </div>
-    </div>
-    <p style="margin-top: 15px; font-size: 0.9rem;">
-      <a href="https://researchacademy.uk">← Back to Home</a>
+    <h1>The 50 Million People Question: Are We Missing the Genetic Truth About Alzheimer's?</h1>
+    <p class="meta">📅 20 July 2026 &nbsp;·&nbsp; 🏷️ Alzheimer's Genetics &nbsp;·&nbsp; ⏱️ 8 min read</p>
+    <p style="margin-top: 10px; font-size: 0.9rem;">
+      <a href="https://blog.researchacademy.uk">← Back to Blog</a>
     </p>
   </div>
 </header>
 
-<!-- ===== ARTICLE CONTENT ===== -->
 <main class="container">
-  <article class="article-content">
+  <article class="article-body">
 
-    <h1>The 50 Million People Question: Are We Missing the Genetic Truth About Alzheimer's?</h1>
     <div class="meta">
       <span>📅 20 July 2026</span>
       <span>🏷️ Alzheimer's Genetics</span>
@@ -294,14 +290,12 @@
     <p><strong>The 50 million people affected by Alzheimer's disease deserve nothing less than rigorous, reproducible science.</strong></p>
 
     <!-- ===== SHARE BUTTONS ===== -->
-    <div class="share-buttons">
-      <p>📤 Share This Article</p>
-      <div class="btn-group">
-        <a href="https://twitter.com/intent/tweet?text=The%2050%20Million%20People%20Question%3A%20Are%20We%20Missing%20the%20Genetic%20Truth%20About%20Alzheimer%27s%3F&url=https://blog.researchacademy.uk/alzheimers-post-1.html" target="_blank" class="btn btn-twitter">🐦 Twitter</a>
-        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://blog.researchacademy.uk/alzheimers-post-1.html" target="_blank" class="btn btn-linkedin">🔗 LinkedIn</a>
-        <a href="https://www.facebook.com/sharer/sharer.php?u=https://blog.researchacademy.uk/alzheimers-post-1.html" target="_blank" class="btn btn-facebook">📘 Facebook</a>
-        <a href="https://api.whatsapp.com/send?text=The%2050%20Million%20People%20Question%3A%20Are%20We%20Missing%20the%20Genetic%20Truth%20About%20Alzheimer%27s%3F%20https://blog.researchacademy.uk/alzheimers-post-1.html" target="_blank" class="btn btn-whatsapp">📱 WhatsApp</a>
-      </div>
+    <div class="share-section">
+      <p>📤 Share this article:</p>
+      <a href="https://twitter.com/intent/tweet?text=The%2050%20Million%20People%20Question%3A%20Are%20We%20Missing%20the%20Genetic%20Truth%20About%20Alzheimer%27s%3F&url=https://blog.researchacademy.uk/alzheimers-post-1.html" target="_blank" class="share-btn share-twitter">🐦 Twitter</a>
+      <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://blog.researchacademy.uk/alzheimers-post-1.html" target="_blank" class="share-btn share-linkedin">🔗 LinkedIn</a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=https://blog.researchacademy.uk/alzheimers-post-1.html" target="_blank" class="share-btn share-facebook">📘 Facebook</a>
+      <a href="https://wa.me/?text=The%2050%20Million%20People%20Question%3A%20Are%20We%20Missing%20the%20Genetic%20Truth%20About%20Alzheimer%27s%3F%20-%20https://blog.researchacademy.uk/alzheimers-post-1.html" target="_blank" class="share-btn share-whatsapp">💬 WhatsApp</a>
     </div>
 
     <!-- ===== REACTIONS ===== -->
@@ -318,7 +312,7 @@
       <p class="response-count">0 Responses</p>
     </div>
 
-    <!-- ===== DISQUS COMMENTS ===== -->
+    <!-- ===== DISQUS COMMENTS (FIXED SHORTNAME) ===== -->
     <div id="disqus_thread"></div>
     <script>
       var disqus_config = function () {
@@ -327,22 +321,25 @@
       };
       (function() {
         var d = document, s = d.createElement('script');
-        s.src = 'https://ldworldglobal.disqus.com/embed.js';
+        s.src = 'https://blog-researchacademy-uk.disqus.com/embed.js';
         s.setAttribute('data-timestamp', +new Date());
         (d.head || d.body).appendChild(s);
       })();
     </script>
-    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <noscript>
+      Please enable JavaScript to view the 
+      <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+    </noscript>
 
     <!-- ===== CITATION ===== -->
-    <div class="citation-box" style="margin-top:30px;">
+    <div class="citation-box">
       <p><strong>Osaghale L, Beshiru A, Subhan U. (2026).</strong> Replication-guided functional genomic prioritization of regulatory risk variants in Alzheimer's disease. <em>Gene Reports</em>. <strong>44</strong>: 102551.</p>
       <p><strong>DOI:</strong> <a href="https://doi.org/10.1016/j.genrep.2026.102551" target="_blank">https://doi.org/10.1016/j.genrep.2026.102551</a></p>
     </div>
 
     <hr>
     <p><em>Next post: "The APOE Story: Why One Genetic Region Dominates Alzheimer's Risk" — Coming soon!</em></p>
-    <a href="blog.html" class="read-more">← Back to Blog Home</a>
+    <a href="https://blog.researchacademy.uk" class="read-more">← Back to Blog Home</a>
 
   </article>
 </main>
@@ -385,24 +382,7 @@
       </div>
     </div>
 
-    <div class="footer-dmca">
-      <a href="https://www.dmca.com/r/0yq1yzy" target="_blank" title="DMCA.com Protection Status">
-        <img src="https://images.dmca.com/Badges/dmca-badge.png?ID=0yq1yzy" alt="DMCA.com Protection Status" />
-      </a>
-    </div>
-
-    <div class="footer-cc">
-      <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
-        <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" />
-      </a>
-      <br>
-      This work is licensed under a
-      <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
-        Creative Commons Attribution 4.0 International License
-      </a>.
-    </div>
-
-    <p style="margin-top:15px; font-size:0.85rem;">
+    <p style="margin-top:20px; font-size:0.85rem;">
       <a href="https://researchacademy.uk">Home</a> &nbsp;·&nbsp;
       <a href="https://blog.researchacademy.uk">Blog</a> &nbsp;·&nbsp;
       <a href="mailto:contact@researchacademy.uk">Contact</a>
