@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ===== JAVASCRIPT PROTECTION ===== -->
+  <script>
+    document.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+      alert('Right-click is disabled on this site to protect content.');
+    });
+
+    document.addEventListener('keydown', function(e) {
+      if (e.ctrlKey && (e.key === 'c' || e.key === 'u' || e.key === 's' || e.key === 'a' || e.key === 'p')) {
+        e.preventDefault();
+        alert('Keyboard shortcuts are disabled on this site to protect content.');
+      }
+    });
+  </script>
+
+  <!-- ===== SEO ===== -->
+  <title>Your Alzheimer's Risk Score: What 71.1% Really Means – LD WORLD GLOBAL</title>
+  <meta name="description" content="Discover what 71.1% really means for your Alzheimer's risk. Learn about polygenic risk scores, APOE contribution, and what the remaining 28.9% means for you.">
+  <link rel="canonical" href="https://blog.researchacademy.uk/alzheimers-post-8.html">
+
+  <!-- ===== OPEN GRAPH (SOCIAL SHARE IMAGE) ===== -->
+  <meta property="og:title" content="Your Alzheimer's Risk Score: What 71.1% Really Means">
+  <meta property="og:description" content="Discover what 71.1% really means for your Alzheimer's risk. Learn about polygenic risk scores, APOE contribution, and what the remaining 28.9% means for you.">
+  <meta property="og:url" content="https://blog.researchacademy.uk/alzheimers-post-8.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="LD WORLD GLOBAL Blog">
+  <meta property="og:image" content="https://blog.researchacademy.uk/risk-score-og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/png">
+
+  <!-- ===== TWITTER CARDS ===== -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@YourTwitterHandle">
+  <meta name="twitter:creator" content="@YourTwitterHandle">
+  <meta name="twitter:title" content="Your Alzheimer's Risk Score: What 71.1% Really Means">
+  <meta name="twitter:description" content="Discover what 71.1% really means for your Alzheimer's risk. Learn about polygenic risk scores, APOE contribution, and what the remaining 28.9% means for you.">
+  <meta name="twitter:image" content="https://blog.researchacademy.uk/risk-score-og-image.png">
+  <meta name="twitter:image:alt" content="Your Alzheimer's Risk Score: APOE contributes 71.1% of genetic risk">
+
+  <!-- ===== JSON-LD STRUCTURED DATA ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Your Alzheimer's Risk Score: What 71.1% Really Means",
+    "description": "Discover what 71.1% really means for your Alzheimer's risk. Learn about polygenic risk scores, APOE contribution, and what the remaining 28.9% means for you.",
+    "url": "https://blog.researchacademy.uk/alzheimers-post-8.html",
+    "author": {
+      "@type": "Person",
+      "name": "Linda Osaghale"
+    },
+    "datePublished": "2026-07-13",
+    "dateModified": "2026-07-13",
+    "publisher": {
+      "@type": "Organization",
+      "name": "LD WORLD GLOBAL"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://blog.researchacademy.uk/alzheimers-post-8.html"
+    },
+    "keywords": "Alzheimer's disease, polygenic risk score, APOE, genetics, risk prediction, PRS, non-APOE genes, BIN1, PICALM, CLU, TREM2, ABCA7"
+  }
+  </script>
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+      background: #f4f6f8;
+      color: #2c3e50;
+      line-height: 1.8;
+    }
+    .container { max-width: 800px; margin: 0 auto; padding: 0 20px; }
+
+    .article-header {
+      background: #1B3A5C;
+      color: #fff;
+      padding: 40px 0 20px;
+      text-align: center;
+    }
+    .article-header .logo {
+      width: 60px;
+      height: auto;
+      display: block;
+      margin: 0 auto 10px;
+    }
+    .article-header h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    .article-header .meta {
+      font-size: 0.9rem;
+      color: #a0c4e0;
+    }
+    .article-header a { color: #2A9D8F; text-decoration: none; }
+    .article-header a:hover { text-decoration: underline; }
+
+    .article-body {
+      background: #fff;
+      padding: 40px 35px;
+      border-radius: 12px;
+      margin: 30px 0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    .article-body h1 { color: #1B3A5C; font-size: 2.2rem; margin-bottom: 0.5rem; }
+    .article-body h2 { color: #1B3A5C; font-size: 1.6rem; margin-top: 2rem; margin-bottom: 1rem; border-bottom: 3px solid #2A9D8F; padding-bottom: 0.5rem; }
+    .article-body h3 { color: #1B3A5C; font-size: 1.3rem; margin-top: 1.5rem; margin-bottom: 0.8rem; }
+    .article-body .meta { color: #8aaec9; font-size: 0.9rem; margin-bottom: 1.5rem; border-bottom: 1px solid #eee; padding-bottom: 1rem; }
+    .article-body .meta span { background: #f4f6f8; padding: 2px 10px; border-radius: 20px; margin-right: 5px; }
+    .article-body table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+    .article-body th, .article-body td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+    .article-body th { background: #1B3A5C; color: #fff; }
+    .article-body tr:nth-child(even) { background: #f9f9f9; }
+    .article-body .citation-box { background: #f0f4f8; padding: 15px 20px; border-radius: 8px; border-left: 4px solid #2A9D8F; margin: 20px 0; }
+    .article-body .citation-box a { color: #2A9D8F; text-decoration: none; }
+    .article-body .citation-box a:hover { text-decoration: underline; }
+
+    .article-body figure {
+      margin: 25px 0;
+      text-align: center;
+    }
+    .article-body figure img {
+      width: 100%;
+      max-width: 800px;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      display: block;
+      margin: 0 auto;
+    }
+    .article-body figure figcaption {
+      font-size: 0.9rem;
+      color: #8aaec9;
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .share-section {
+      margin: 30px 0 20px;
+      padding-top: 20px;
+      border-top: 2px solid #e8edf2;
+      text-align: center;
+    }
+    .share-section p {
+      font-weight: 600;
+      color: #1B3A5C;
+      margin-bottom: 10px;
+      font-size: 1.1rem;
+    }
+    .share-btn {
+      display: inline-block;
+      padding: 10px 20px;
+      margin: 5px 8px;
+      border-radius: 6px;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: background 0.2s;
+    }
+    .share-btn:hover { opacity: 0.8; }
+    .share-twitter { background: #1DA1F2; }
+    .share-linkedin { background: #0077B5; }
+    .share-facebook { background: #1877F2; }
+    .share-whatsapp { background: #25D366; }
+
+    .reactions { text-align:center; padding:20px 0; border-top:1px solid #eee; border-bottom:1px solid #eee; margin:20px 0; }
+    .reactions p { font-weight:600; color:#1B3A5C; margin-bottom:10px; }
+    .reactions .emoji-group { display:flex; flex-wrap:wrap; gap:15px; justify-content:center; font-size:1.5rem; }
+    .reactions .emoji-group span { cursor:pointer; }
+    .reactions .response-count { font-size:0.85rem; color:#8aaec9; margin-top:10px; }
+
+    .read-more { display: inline-block; margin-top: 20px; color: #2A9D8F; font-weight: 600; text-decoration: none; }
+    .read-more:hover { text-decoration: underline; }
+
+    footer {
+      background: #1B3A5C;
+      color: #8aaec9;
+      text-align: center;
+      padding: 20px 0;
+      font-size: 0.9rem;
+      margin-top: 40px;
+    }
+    footer a { color: #a0c4e0; text-decoration: none; }
+    footer a:hover { color: #fff; }
+    .footer-logo { width: 30px; height: auto; display: inline-block; vertical-align: middle; margin-right: 8px; }
+
+    #mc_embed_signup {
+      background: transparent !important;
+      width: 100% !important;
+      max-width: 500px;
+      margin: 0 auto;
+      font-family: 'Segoe UI', sans-serif !important;
+    }
+    #mc_embed_signup input.email {
+      padding: 12px 15px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      width: 100%;
+      max-width: 300px;
+      font-size: 1rem;
+      margin-bottom: 10px;
+    }
+    #mc_embed_signup .button {
+      background: #2A9D8F;
+      color: #fff;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    #mc_embed_signup .button:hover { background: #1f7a6e; }
+    #mc_embed_signup h2 { color: #fff; font-size: 1.5rem; }
+    #mc_embed_signup .indicates-required { color: #a0c4e0; font-size: 0.85rem; }
+    #mc_embed_signup label { color: #fff; }
+
+    @media (max-width: 600px) {
+      .article-header h1 { font-size: 1.6rem; }
+      .article-body { padding: 25px 20px; }
+      .share-btn { padding: 8px 15px; margin: 4px 5px; font-size: 0.8rem; }
+      .reactions .emoji-group { font-size: 1.2rem; gap: 10px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="article-header">
+  <div class="container">
+    <img src="logo.png" alt="LD WORLD GLOBAL Logo" class="logo">
+    <h1>Your Alzheimer's Risk Score: What 71.1% Really Means</h1>
+    <p class="meta">📅 13 July 2026 &nbsp;·&nbsp; 🏷️ Alzheimer's Genetics &nbsp;·&nbsp; ⏱️ 7 min read</p>
+    <p style="margin-top: 10px; font-size: 0.9rem;">
+      <a href="https://blog.researchacademy.uk">← Back to Blog</a>
+    </p>
+  </div>
+</header>
+
+<!-- ===== ARTICLE CONTENT ===== -->
+<main class="container">
+  <article class="article-body">
+
+    <div class="meta">
+      <span>📅 13 July 2026</span>
+      <span>🏷️ Alzheimer's Genetics</span>
+      <span>⏱️ 7 min read</span>
+      <span>👩‍🔬 Linda Osaghale</span>
+    </div>
+
+    <p><em>Why APOE Isn't the Whole Story (But It's Most of It)</em></p>
+
+    <p>What if I told you that <strong>71.1%</strong> of your genetic risk for Alzheimer's comes from just one gene?</p>
+
+    <p>And what if I told you that the other <strong>28.9%</strong> comes from multiple other genes working together?</p>
+
+    <p>That's exactly what our polygenic risk score analysis revealed. And it has huge implications for how we think about Alzheimer's risk.</p>
+
+    <!-- ===== BLOG IMAGE ===== -->
+    <figure>
+      <img src="risk-score-infographic.png" alt="Your Alzheimer's Risk Score: APOE contributes 71.1% of genome-wide significant risk, non-APOE genes contribute 28.9%">
+      <figcaption>
+        Figure 1: APOE contributes 71.1% of genome-wide significant Alzheimer's risk, while non-APOE genes contribute 28.9%. Based on Osaghale et al. (2026).
+      </figcaption>
+    </figure>
+
+    <h2>What Is a Polygenic Risk Score?</h2>
+
+    <p>A polygenic risk score (PRS) is a single number that summarizes your genetic risk for a disease:</p>
+
+    <h3>How It's Calculated</h3>
+
+    <table>
+      <tr><th>Step</th><th>What It Does</th></tr>
+      <tr><td>1</td><td>Identify variants associated with the disease</td></tr>
+      <tr><td>2</td><td>Weight each variant by its effect size</td></tr>
+      <tr><td>3</td><td>Sum the weighted effects</td></tr>
+      <tr><td>4</td><td>Generate a single risk score</td></tr>
+    </table>
+
+    <p><strong>Higher score = Higher genetic risk</strong></p>
+
+    <h3>Why It Matters</h3>
+
+    <table>
+      <tr><th>Reason</th><th>Explanation</th></tr>
+      <tr><td>Risk prediction</td><td>Identifies high-risk individuals</td></tr>
+      <tr><td>Clinical decision-making</td><td>Guides screening and prevention</td></tr>
+      <tr><td>Research</td><td>Identifies subgroups for clinical trials</td></tr>
+    </table>
+
+    <h2>Our Polygenic Risk Score Analysis</h2>
+
+    <h3>Approach</h3>
+
+    <p>We calculated PRS using multiple P-value thresholds:</p>
+
+    <table>
+      <tr><th>Threshold</th><th>Significance Level</th></tr>
+      <tr><td>5 × 10⁻⁸</td><td>Genome-wide significant</td></tr>
+      <tr><td>1 × 10⁻⁶</td><td>Suggestive significance</td></tr>
+      <tr><td>1 × 10⁻⁵</td><td>Suggestive significance</td></tr>
+      <tr><td>1 × 10⁻⁴</td><td>Suggestive significance</td></tr>
+      <tr><td>0.001</td><td>Moderate significance</td></tr>
+      <tr><td>0.01</td><td>Nominal significance</td></tr>
+      <tr><td>0.05</td><td>Nominal significance</td></tr>
+    </table>
+
+    <h3>What We Did</h3>
+
+    <p>For each threshold:</p>
+
+    <ul>
+      <li>Selected variants meeting the threshold</li>
+      <li>Summed their effect sizes (β)</li>
+      <li>Calculated PRS with APOE region</li>
+      <li>Calculated PRS without APOE region</li>
+      <li>Calculated APOE contribution percentage</li>
+    </ul>
+
+    <h2>The Results</h2>
+
+    <h3>At Genome-Wide Significance (P < 5 × 10⁻⁸)</h3>
+
+    <table>
+      <tr><th>Component</th><th>Contribution</th></tr>
+      <tr><td>APOE</td><td>71.1%</td></tr>
+      <tr><td>Non-APOE</td><td>28.9%</td></tr>
+    </table>
+
+    <h3>At Nominal Significance (P < 0.05)</h3>
+
+    <table>
+      <tr><th>Component</th><th>Contribution</th></tr>
+      <tr><td>APOE</td><td>~71%</td></tr>
+      <tr><td>Non-APOE</td><td>~29%</td></tr>
+    </table>
+
+    <p>The relative contribution of non-APOE variants remained stable as we relaxed the P-value threshold.</p>
+
+    <h2>What 71.1% Means</h2>
+
+    <h3>The Good News</h3>
+
+    <ul>
+      <li><strong>APOE is the dominant risk factor:</strong> If you want to know your Alzheimer's risk, knowing your APOE genotype is the most informative single piece of information.</li>
+      <li><strong>Risk prediction is possible:</strong> APOE genotyping is available and affordable.</li>
+      <li><strong>High-risk individuals can be identified:</strong> APOE4 carriers can be identified for early intervention.</li>
+    </ul>
+
+    <h3>The Cautionary Note</h3>
+
+    <ul>
+      <li><strong>71.1% is not 100%:</strong> APOE doesn't explain all genetic risk.</li>
+      <li><strong>Non-APOE variants matter:</strong> The remaining 28.9% is substantial.</li>
+      <li><strong>Other factors matter:</strong> Environment, lifestyle, and other genes also contribute.</li>
+    </ul>
+
+    <h2>The Practical Implication</h2>
+
+    <table>
+      <tr><th>Scenario</th><th>Recommendation</th></tr>
+      <tr><td>APOE4 carrier</td><td>Consider genetic counseling, early screening, lifestyle interventions</td></tr>
+      <tr><td>APOE4 carrier + other risk variants</td><td>Highest risk, consider clinical trial participation</td></tr>
+      <tr><td>APOE4 non-carrier</td><td>Still at risk (non-APOE variants matter)</td></tr>
+      <tr><td>Multiple non-APOE risk variants</td><td>Increased risk even without APOE4</td></tr>
+    </table>
+
+    <h2>The 28.9%: What's in There?</h2>
+
+    <p>Our gene-based analysis identified five non-APOE genes:</p>
+
+    <table>
+      <tr><th>Gene</th><th>Contribution</th></tr>
+      <tr><td>BIN1</td><td>Modest but significant</td></tr>
+      <tr><td>PICALM</td><td>Modest but significant</td></tr>
+      <tr><td>CLU</td><td>Modest but significant</td></tr>
+      <tr><td>TREM2</td><td>Modest but significant</td></tr>
+      <tr><td>ABCA7</td><td>Modest but significant</td></tr>
+    </table>
+
+    <p><strong>Together, these genes contribute to the 28.9% non-APOE risk.</strong></p>
+
+    <h2>Why This Matters</h2>
+
+    <ul>
+      <li><strong>Multiple pathways:</strong> Non-APOE genes implicate different biological pathways</li>
+      <li><strong>Therapeutic targets:</strong> These genes represent potential drug targets</li>
+      <li><strong>Risk prediction:</strong> Including non-APOE variants improves risk prediction</li>
+    </ul>
+
+    <h2>Comparing PRS to Other Risk Factors</h2>
+
+    <h3>Genetic vs. Non-Genetic Risk</h3>
+
+    <table>
+      <tr><th>Factor</th><th>Contribution</th></tr>
+      <tr><td>APOE genotype</td><td>~25% of overall risk</td></tr>
+      <tr><td>Non-APOE genetic variants</td><td>~10% of overall risk</td></tr>
+      <tr><td>Age</td><td>Strongest risk factor</td></tr>
+      <tr><td>Family history</td><td>Significant</td></tr>
+      <tr><td>Lifestyle factors</td><td>Modifiable</td></tr>
+    </table>
+
+    <p><strong>Genetics matter, but they're not everything.</strong></p>
+
+    <h2>Practical Implications</h2>
+
+    <table>
+      <tr><th>Risk Factor</th><th>Actionable?</th></tr>
+      <tr><td>APOE genotype</td><td>Not modifiable</td></tr>
+      <tr><td>Non-APOE genetics</td><td>Not modifiable</td></tr>
+      <tr><td>Age</td><td>Not modifiable</td></tr>
+      <tr><td>Family history</td><td>Not modifiable</td></tr>
+      <tr><td>Lifestyle</td><td><strong>MODIFIABLE ✅</strong></td></tr>
+      <tr><td>Environment</td><td><strong>MODIFIABLE ✅</strong></td></tr>
+    </table>
+
+    <p><strong>You can't change your genetics, but you can change your lifestyle.</strong></p>
+
+    <h2>The Future of Risk Prediction</h2>
+
+    <h3>Current State</h3>
+
+    <ul>
+      <li><strong>APOE genotyping:</strong> Available and affordable</li>
+      <li><strong>Polygenic risk scores:</strong> Becoming available</li>
+      <li><strong>Integration with other factors:</strong> Still developing</li>
+    </ul>
+
+    <h3>Future Directions</h3>
+
+    <table>
+      <tr><th>Development</th><th>Timeline</th></tr>
+      <tr><td>Better PRS models</td><td>1-3 years</td></tr>
+      <tr><td>Integration with biomarkers</td><td>3-5 years</td></tr>
+      <tr><td>Clinical implementation</td><td>5-10 years</td></tr>
+      <tr><td>Personalized prevention</td><td>5-10 years</td></tr>
+    </table>
+
+    <h2>The Bottom Line</h2>
+
+    <ul>
+      <li>APOE contributes <strong>71.1%</strong> of genome-wide significant risk</li>
+      <li>Non-APOE variants contribute <strong>28.9%</strong> of risk</li>
+      <li>APOE is the dominant risk factor but not the only one</li>
+      <li>Complete risk assessment requires both APOE and non-APOE variants</li>
+      <li>Lifestyle factors are modifiable and matter</li>
+    </ul>
+
+    <p><strong>Your Alzheimer's risk is determined by multiple factors. APOE is the biggest genetic contributor, but it's not the whole story.</strong></p>
+
+    <h2>Key Takeaways</h2>
+
+    <table>
+      <tr><th>Finding</th><th>Implication</th></tr>
+      <tr><td>APOE = 71.1% of risk</td><td>Dominant genetic factor</td></tr>
+      <tr><td>Non-APOE = 28.9% of risk</td><td>Still substantial</td></tr>
+      <tr><td>Multiple genes contribute</td><td>Complex genetic architecture</td></tr>
+      <tr><td>PRS can predict risk</td><td>Clinical applications possible</td></tr>
+      <tr><td>Lifestyle matters</td><td>Modifiable risk factors</td></tr>
+    </table>
+
+    <!-- ===== SHARE SECTION ===== -->
+    <div class="share-section">
+      <p>📤 Share this article:</p>
+      <a href="https://twitter.com/intent/tweet?text=Your%20Alzheimer's%20Risk%20Score%3A%20What%2071.1%25%20Really%20Means&url=https://blog.researchacademy.uk/alzheimers-post-8.html" target="_blank" class="share-btn share-twitter">🐦 Twitter</a>
+      <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://blog.researchacademy.uk/alzheimers-post-8.html" target="_blank" class="share-btn share-linkedin">🔗 LinkedIn</a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=https://blog.researchacademy.uk/alzheimers-post-8.html" target="_blank" class="share-btn share-facebook">📘 Facebook</a>
+      <a href="https://wa.me/?text=Your%20Alzheimer's%20Risk%20Score%3A%20What%2071.1%25%20Really%20Means%20-%20https://blog.researchacademy.uk/alzheimers-post-8.html" target="_blank" class="share-btn share-whatsapp">💬 WhatsApp</a>
+    </div>
+
+    <!-- ===== REACTIONS ===== -->
+    <div class="reactions">
+      <p>What do you think?</p>
+      <div class="emoji-group">
+        <span title="Upvote">👍</span>
+        <span title="Funny">😂</span>
+        <span title="Love">❤️</span>
+        <span title="Surprised">😮</span>
+        <span title="Angry">😡</span>
+        <span title="Sad">😢</span>
+      </div>
+      <p class="response-count">0 Responses</p>
+    </div>
+
+    <!-- ===== DISQUS COMMENTS ===== -->
+    <div id="disqus_thread"></div>
+    <script>
+      var disqus_config = function () {
+        this.page.url = 'https://blog.researchacademy.uk/alzheimers-post-8.html';
+        this.page.identifier = 'alzheimers-post-8';
+      };
+      (function() {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://blog-researchacademy-uk.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+      })();
+    </script>
+    <noscript>
+      Please enable JavaScript to view the
+      <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+    </noscript>
+
+    <!-- ===== CITATION ===== -->
+    <div class="citation-box">
+      <p><strong>Osaghale L, Beshiru A, Subhan U. (2026).</strong> Replication-guided functional genomic prioritization of regulatory risk variants in Alzheimer's disease. <em>Gene Reports</em>. <strong>44</strong>: 102551.</p>
+      <p><strong>DOI:</strong> <a href="https://doi.org/10.1016/j.genrep.2026.102551" target="_blank">https://doi.org/10.1016/j.genrep.2026.102551</a></p>
+    </div>
+
+    <!-- ===== CODE AVAILABILITY ===== -->
+    <div class="citation-box" style="margin-top: 20px; border-left-color: #1B3A5C;">
+      <p><strong>Code Availability:</strong> <a href="https://github.com/Oselin1988/GWAS_AD" target="_blank">https://github.com/Oselin1988/GWAS_AD</a></p>
+    </div>
+
+    <hr>
+
+    <p><em>Next post: "BIN1: The Synaptic Gene That Could Hold the Key to Alzheimer's" — Coming soon!</em></p>
+
+    <a href="https://blog.researchacademy.uk" class="read-more">← Back to Blog Home</a>
+
+  </article>
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="container">
+    <p>
+      <img src="logo.png" alt="LD WORLD GLOBAL Logo" class="footer-logo">
+      © 2026 LD WORLD GLOBAL. All rights reserved.
+    </p>
+
+    <!-- ===== NEWSLETTER ===== -->
+    <div style="margin-top:20px; padding-top:20px; border-top:1px solid #2a4a6a;">
+      <h4 style="color:#fff;">📧 Subscribe to Our Newsletter</h4>
+      <p style="color:#a0c4e0; font-size:0.9rem;">Get the latest insights on AMR, bioinformatics, and AI in research.</p>
+
+      <div id="mc_embed_signup">
+        <form action="https://researchacademy.us13.list-manage.com/subscribe/post?u=acdfa9230fb7af42fe6e60e57&amp;id=762607cb5e&amp;f_id=00679cedf0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
+          <div id="mc_embed_signup_scroll">
+            <h2>Subscribe</h2>
+            <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
+            <div class="mc-field-group">
+              <label for="mce-EMAIL">Email Address <span class="asterisk">*</span></label>
+              <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required value="">
+            </div>
+            <div id="mce-responses" class="clear foot">
+              <div class="response" id="mce-error-response" style="display: none;"></div>
+              <div class="response" id="mce-success-response" style="display: none;"></div>
+            </div>
+            <div aria-hidden="true" style="position: absolute; left: -5000px;">
+              <input type="text" name="b_acdfa9230fb7af42fe6e60e57_762607cb5e" tabindex="-1" value="">
+            </div>
+            <div class="optionalParent">
+              <div class="clear foot">
+                <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button" value="Subscribe">
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <p style="margin-top:20px; font-size:0.85rem;">
+      <a href="https://researchacademy.uk">Home</a> &nbsp;·&nbsp;
+      <a href="https://blog.researchacademy.uk">Blog</a> &nbsp;·&nbsp;
+      <a href="mailto:contact@researchacademy.uk">Contact</a>
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
