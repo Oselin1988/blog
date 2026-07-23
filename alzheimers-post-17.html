@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ===== JAVASCRIPT PROTECTION ===== -->
+  <script>
+    document.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+      alert('Right-click is disabled on this site to protect content.');
+    });
+
+    document.addEventListener('keydown', function(e) {
+      if (e.ctrlKey && (e.key === 'c' || e.key === 'u' || e.key === 's' || e.key === 'a' || e.key === 'p')) {
+        e.preventDefault();
+        alert('Keyboard shortcuts are disabled on this site to protect content.');
+      }
+    });
+  </script>
+
+  <!-- ===== SEO ===== -->
+  <title>FUMA: The Swiss Army Knife of Functional Annotation – LD WORLD GLOBAL</title>
+  <meta name="description" content="Discover how FUMA (Functional Mapping and Annotation of GWAS) helped decode Alzheimer's genetics. Learn about positional mapping, eQTL analysis, and functional annotation.">
+  <link rel="canonical" href="https://blog.researchacademy.uk/alzheimers-post-17.html">
+
+  <!-- ===== OPEN GRAPH (SOCIAL SHARE IMAGE) ===== -->
+  <meta property="og:title" content="FUMA: The Swiss Army Knife of Functional Annotation">
+  <meta property="og:description" content="Discover how FUMA (Functional Mapping and Annotation of GWAS) helped decode Alzheimer's genetics. Learn about positional mapping, eQTL analysis, and functional annotation.">
+  <meta property="og:url" content="https://blog.researchacademy.uk/alzheimers-post-17.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="LD WORLD GLOBAL Blog">
+  <meta property="og:image" content="https://blog.researchacademy.uk/fuma-og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/png">
+
+  <!-- ===== TWITTER CARDS ===== -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@YourTwitterHandle">
+  <meta name="twitter:creator" content="@YourTwitterHandle">
+  <meta name="twitter:title" content="FUMA: The Swiss Army Knife of Functional Annotation">
+  <meta name="twitter:description" content="Discover how FUMA helped decode Alzheimer's genetics.">
+  <meta name="twitter:image" content="https://blog.researchacademy.uk/fuma-og-image.png">
+  <meta name="twitter:image:alt" content="FUMA: Functional Annotation Tool for Alzheimer's Genetics">
+
+  <!-- ===== JSON-LD STRUCTURED DATA ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "FUMA: The Swiss Army Knife of Functional Annotation",
+    "description": "Discover how FUMA (Functional Mapping and Annotation of GWAS) helped decode Alzheimer's genetics. Learn about positional mapping, eQTL analysis, and functional annotation.",
+    "url": "https://blog.researchacademy.uk/alzheimers-post-17.html",
+    "author": {
+      "@type": "Person",
+      "name": "Linda Osaghale"
+    },
+    "datePublished": "2026-07-04",
+    "dateModified": "2026-07-04",
+    "publisher": {
+      "@type": "Organization",
+      "name": "LD WORLD GLOBAL"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://blog.researchacademy.uk/alzheimers-post-17.html"
+    },
+    "keywords": "FUMA, functional annotation, GWAS, Alzheimer's disease, genetics, positional mapping, eQTL, chromatin interaction, CADD, RegulomeDB"
+  }
+  </script>
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+      background: #f4f6f8;
+      color: #2c3e50;
+      line-height: 1.8;
+    }
+    .container { max-width: 800px; margin: 0 auto; padding: 0 20px; }
+
+    .article-header {
+      background: #1B3A5C;
+      color: #fff;
+      padding: 40px 0 20px;
+      text-align: center;
+    }
+    .article-header .logo {
+      width: 60px;
+      height: auto;
+      display: block;
+      margin: 0 auto 10px;
+    }
+    .article-header h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    .article-header .meta {
+      font-size: 0.9rem;
+      color: #a0c4e0;
+    }
+    .article-header a { color: #2A9D8F; text-decoration: none; }
+    .article-header a:hover { text-decoration: underline; }
+
+    .article-body {
+      background: #fff;
+      padding: 40px 35px;
+      border-radius: 12px;
+      margin: 30px 0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    .article-body h1 { color: #1B3A5C; font-size: 2.2rem; margin-bottom: 0.5rem; }
+    .article-body h2 { color: #1B3A5C; font-size: 1.6rem; margin-top: 2rem; margin-bottom: 1rem; border-bottom: 3px solid #2A9D8F; padding-bottom: 0.5rem; }
+    .article-body h3 { color: #1B3A5C; font-size: 1.3rem; margin-top: 1.5rem; margin-bottom: 0.8rem; }
+    .article-body .meta { color: #8aaec9; font-size: 0.9rem; margin-bottom: 1.5rem; border-bottom: 1px solid #eee; padding-bottom: 1rem; }
+    .article-body .meta span { background: #f4f6f8; padding: 2px 10px; border-radius: 20px; margin-right: 5px; }
+    .article-body table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+    .article-body th, .article-body td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+    .article-body th { background: #1B3A5C; color: #fff; }
+    .article-body tr:nth-child(even) { background: #f9f9f9; }
+    .article-body .citation-box { background: #f0f4f8; padding: 15px 20px; border-radius: 8px; border-left: 4px solid #2A9D8F; margin: 20px 0; }
+    .article-body .citation-box a { color: #2A9D8F; text-decoration: none; }
+    .article-body .citation-box a:hover { text-decoration: underline; }
+
+    .article-body figure {
+      margin: 25px 0;
+      text-align: center;
+    }
+    .article-body figure img {
+      width: 100%;
+      max-width: 800px;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      display: block;
+      margin: 0 auto;
+    }
+    .article-body figure figcaption {
+      font-size: 0.9rem;
+      color: #8aaec9;
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .share-section {
+      margin: 30px 0 20px;
+      padding-top: 20px;
+      border-top: 2px solid #e8edf2;
+      text-align: center;
+    }
+    .share-section p {
+      font-weight: 600;
+      color: #1B3A5C;
+      margin-bottom: 10px;
+      font-size: 1.1rem;
+    }
+    .share-btn {
+      display: inline-block;
+      padding: 10px 20px;
+      margin: 5px 8px;
+      border-radius: 6px;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: background 0.2s;
+    }
+    .share-btn:hover { opacity: 0.8; }
+    .share-twitter { background: #1DA1F2; }
+    .share-linkedin { background: #0077B5; }
+    .share-facebook { background: #1877F2; }
+    .share-whatsapp { background: #25D366; }
+
+    .reactions { text-align:center; padding:20px 0; border-top:1px solid #eee; border-bottom:1px solid #eee; margin:20px 0; }
+    .reactions p { font-weight:600; color:#1B3A5C; margin-bottom:10px; }
+    .reactions .emoji-group { display:flex; flex-wrap:wrap; gap:15px; justify-content:center; font-size:1.5rem; }
+    .reactions .emoji-group span { cursor:pointer; }
+    .reactions .response-count { font-size:0.85rem; color:#8aaec9; margin-top:10px; }
+
+    .read-more { display: inline-block; margin-top: 20px; color: #2A9D8F; font-weight: 600; text-decoration: none; }
+    .read-more:hover { text-decoration: underline; }
+
+    footer {
+      background: #1B3A5C;
+      color: #8aaec9;
+      text-align: center;
+      padding: 20px 0;
+      font-size: 0.9rem;
+      margin-top: 40px;
+    }
+    footer a { color: #a0c4e0; text-decoration: none; }
+    footer a:hover { color: #fff; }
+    .footer-logo { width: 30px; height: auto; display: inline-block; vertical-align: middle; margin-right: 8px; }
+
+    #mc_embed_signup {
+      background: transparent !important;
+      width: 100% !important;
+      max-width: 500px;
+      margin: 0 auto;
+      font-family: 'Segoe UI', sans-serif !important;
+    }
+    #mc_embed_signup input.email {
+      padding: 12px 15px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      width: 100%;
+      max-width: 300px;
+      font-size: 1rem;
+      margin-bottom: 10px;
+    }
+    #mc_embed_signup .button {
+      background: #2A9D8F;
+      color: #fff;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    #mc_embed_signup .button:hover { background: #1f7a6e; }
+    #mc_embed_signup h2 { color: #fff; font-size: 1.5rem; }
+    #mc_embed_signup .indicates-required { color: #a0c4e0; font-size: 0.85rem; }
+    #mc_embed_signup label { color: #fff; }
+
+    @media (max-width: 600px) {
+      .article-header h1 { font-size: 1.6rem; }
+      .article-body { padding: 25px 20px; }
+      .share-btn { padding: 8px 15px; margin: 4px 5px; font-size: 0.8rem; }
+      .reactions .emoji-group { font-size: 1.2rem; gap: 10px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="article-header">
+  <div class="container">
+    <img src="logo.png" alt="LD WORLD GLOBAL Logo" class="logo">
+    <h1>FUMA: The Swiss Army Knife of Functional Annotation</h1>
+    <p class="meta">📅 4 July 2026 &nbsp;·&nbsp; 🏷️ Alzheimer's Genetics &nbsp;·&nbsp; ⏱️ 6 min read</p>
+    <p style="margin-top: 10px; font-size: 0.9rem;">
+      <a href="https://blog.researchacademy.uk">← Back to Blog</a>
+    </p>
+  </div>
+</header>
+
+<!-- ===== ARTICLE CONTENT ===== -->
+<main class="container">
+  <article class="article-body">
+
+    <div class="meta">
+      <span>📅 4 July 2026</span>
+      <span>🏷️ Alzheimer's Genetics</span>
+      <span>⏱️ 6 min read</span>
+      <span>👩‍🔬 Linda Osaghale</span>
+    </div>
+
+    <p><em>The Tool That Helped Us Decode Alzheimer's Genetics</em></p>
+
+    <p>Imagine you've found a treasure map. But the map is written in code. You need a decoder ring to understand it.</p>
+
+    <p>That's what functional annotation tools are for genetic research. And <strong>FUMA</strong> is one of the best.</p>
+
+    <!-- ===== BLOG IMAGE ===== -->
+    <figure>
+      <img src="fuma-infographic.png" alt="FUMA: The Swiss Army Knife of Functional Annotation for Alzheimer's Genetics Research">
+      <figcaption>
+        Figure 1: FUMA (Functional Mapping and Annotation of GWAS) is a comprehensive tool for annotating GWAS results, including positional mapping, eQTL analysis, chromatin interaction mapping, and functional annotation. Based on Osaghale et al. (2026).
+      </figcaption>
+    </figure>
+
+    <h2>What Is FUMA?</h2>
+
+    <p>FUMA (Functional Mapping and Annotation of GWAS) is a comprehensive functional annotation tool:</p>
+
+    <table>
+      <tr><th>Feature</th><th>What It Does</th></tr>
+      <tr><td>SNP2GENE</td><td>Annotates GWAS results</td></tr>
+      <tr><td>GENE2FUNC</td><td>Analyzes gene sets</td></tr>
+      <tr><td>Visualization</td><td>Generates plots and tables</td></tr>
+      <tr><td>Integration</td><td>Combines multiple data types</td></tr>
+    </table>
+
+    <p><strong>FUMA is your decoder ring for Alzheimer's genetics.</strong></p>
+
+    <h2>What FUMA Does</h2>
+
+    <h3>1. Positional Mapping</h3>
+
+    <table>
+      <tr><th>Function</th><th>What It Does</th></tr>
+      <tr><td>SNP proximity</td><td>Identifies genes near SNPs</td></tr>
+      <tr><td>Gene boundaries</td><td>Maps SNPs to genes</td></tr>
+      <tr><td>Distance threshold</td><td>Default ±10 kb</td></tr>
+    </table>
+
+    <h3>2. eQTL Mapping</h3>
+
+    <table>
+      <tr><th>Function</th><th>What It Does</th></tr>
+      <tr><td>Expression effects</td><td>Identifies SNPs that affect expression</td></tr>
+      <tr><td>Tissue specificity</td><td>Identifies tissue-specific effects</td></tr>
+      <tr><td>GTEx data</td><td>Uses GTEx v8 data</td></tr>
+    </table>
+
+    <h3>3. Chromatin Interaction Mapping</h3>
+
+    <table>
+      <tr><th>Function</th><th>What It Does</th></tr>
+      <tr><td>3D structure</td><td>Identifies chromatin interactions</td></tr>
+      <tr><td>Hi-C data</td><td>Uses H1-hESC and IMR90 cell lines</td></tr>
+      <tr><td>Regulatory elements</td><td>Identifies enhancer-promoter interactions</td></tr>
+    </table>
+
+    <h3>4. Functional Annotation</h3>
+
+    <table>
+      <tr><th>Function</th><th>What It Does</th></tr>
+      <tr><td>CADD scores</td><td>Predicts variant impact</td></tr>
+      <tr><td>RegulomeDB</td><td>Regulatory potential</td></tr>
+      <tr><td>Chromatin states</td><td>Tissue-specific activity</td></tr>
+    </table>
+
+    <h2>How We Used FUMA</h2>
+
+    <h3>Step 1: Input</h3>
+    <p>We provided:</p>
+
+    <table>
+      <tr><th>Input</th><th>What It Was</th></tr>
+      <tr><td>GWAS summary statistics</td><td>FinnGen Alzheimer's data</td></tr>
+      <tr><td>Lead SNPs</td><td>Three genome-wide significant variants</td></tr>
+      <tr><td>LD reference</td><td>1000 Genomes Phase 3 European</td></tr>
+    </table>
+
+    <h3>Step 2: Annotation</h3>
+    <p>FUMA performed:</p>
+
+    <table>
+      <tr><th>Annotation</th><th>What It Found</th></tr>
+      <tr><td>Positional mapping</td><td>APOE, TOMM40, APOC1, PVRL2</td></tr>
+      <tr><td>eQTL mapping</td><td>No significant eQTLs</td></tr>
+      <tr><td>Chromatin interaction</td><td>No significant interactions</td></tr>
+      <tr><td>Functional annotation</td><td>CADD scores, RegulomeDB, chromatin states</td></tr>
+    </table>
+
+    <h3>Step 3: Output</h3>
+    <p>FUMA generated:</p>
+
+    <table>
+      <tr><th>Output</th><th>What It Showed</th></tr>
+      <tr><td>Gene prioritization</td><td>APOE, TOMM40, APOC1, PVRL2</td></tr>
+      <tr><td>Variant annotation</td><td>75.1% non-coding</td></tr>
+      <tr><td>Regional plots</td><td>Chromosome 19 locus</td></tr>
+      <tr><td>LD structure</td><td>r² ≥ 0.6 with lead SNP</td></tr>
+    </table>
+
+    <h2>What FUMA Revealed</h2>
+
+    <h3>1. APOE, TOMM40, APOC1, and PVRL2</h3>
+
+    <table>
+      <tr><th>Gene</th><th>Function</th><th>Significance</th></tr>
+      <tr><td>APOE</td><td>Lipid transport, amyloid clearance</td><td>Lead gene</td></tr>
+      <tr><td>TOMM40</td><td>Mitochondrial function</td><td>Equivalent to APOE</td></tr>
+      <tr><td>APOC1</td><td>Lipid metabolism</td><td>Equivalent to APOE</td></tr>
+      <tr><td>PVRL2</td><td>Cell adhesion</td><td>Lower but significant</td></tr>
+    </table>
+
+    <p><strong>The chromosome 19 locus contains multiple genes, not just APOE.</strong></p>
+
+    <h3>2. Non-Coding Variants</h3>
+
+    <table>
+      <tr><th>Category</th><th>Percentage</th></tr>
+      <tr><td>Intergenic</td><td>43.8%</td></tr>
+      <tr><td>Intronic</td><td>31.3%</td></tr>
+      <tr><td>Total non-coding</td><td>75.1%</td></tr>
+    </table>
+
+    <p><strong>Most variants are in non-coding regions.</strong></p>
+
+    <h3>3. LD Structure</h3>
+
+    <table>
+      <tr><th>Observation</th><th>Implication</th></tr>
+      <tr><td>r² ≥ 0.6 with lead SNP</td><td>Multiple variants are correlated</td></tr>
+      <tr><td>Shared haplotype</td><td>Variants are inherited together</td></tr>
+      <tr><td>Gene-rich interval</td><td>Multiple genes in the locus</td></tr>
+    </table>
+
+    <h2>What We Did NOT Find</h2>
+
+    <h3>No Significant eQTLs</h3>
+
+    <table>
+      <tr><th>Finding</th><th>Implication</th></tr>
+      <tr><td>No eQTL evidence</td><td>Variants don't show clear expression effects</td></tr>
+      <tr><td>Maybe context-dependent</td><td>Effects may depend on cell type or state</td></tr>
+      <tr><td>Need experimental validation</td><td>Functional studies needed</td></tr>
+    </table>
+
+    <h3>No Significant Chromatin Interactions</h3>
+
+    <table>
+      <tr><th>Finding</th><th>Implication</th></tr>
+      <tr><td>No chromatin interaction evidence</td><td>Variants don't show clear 3D interactions</td></tr>
+      <tr><td>Maybe context-dependent</td><td>Interactions may depend on cell type</td></tr>
+      <tr><td>Need experimental validation</td><td>3D studies needed</td></tr>
+    </table>
+
+    <h2>The Limitations of FUMA</h2>
+
+    <h3>1. Context Dependence</h3>
+
+    <table>
+      <tr><th>Limitation</th><th>Why It Matters</th></tr>
+      <tr><td>Tissue-specific</td><td>Effects may only appear in certain tissues</td></tr>
+      <tr><td>Cell-state dependent</td><td>Effects may depend on cellular state</td></tr>
+      <tr><td>Dynamic</td><td>Effects may change over time</td></tr>
+    </table>
+
+    <h3>2. Data Quality</h3>
+
+    <table>
+      <tr><th>Limitation</th><th>Why It Matters</th></tr>
+      <tr><td>Reference data</td><td>Depends on quality of reference datasets</td></tr>
+      <tr><td>Sample size</td><td>Limited by available data</td></tr>
+      <tr><td>Ancestry</td><td>Reference data is mostly European</td></tr>
+    </table>
+
+    <h3>3. Prediction vs. Reality</h3>
+
+    <table>
+      <tr><th>Limitation</th><th>Why It Matters</th></tr>
+      <tr><td>Predictions</td><td>FUMA makes predictions, not measurements</td></tr>
+      <tr><td>Experimental validation needed</td><td>Predictions need confirmation</td></tr>
+      <tr><td>False positives</td><td>Some predictions may be wrong</td></tr>
+    </table>
+
+    <h2>The Bottom Line</h2>
+
+    <ul>
+      <li>FUMA is a powerful functional annotation tool</li>
+      <li>It identified APOE, TOMM40, APOC1, and PVRL2 as key genes</li>
+      <li>Most variants are non-coding (75.1%)</li>
+      <li>No significant eQTLs or chromatin interactions were found</li>
+      <li>Experimental validation is needed for functional confirmation</li>
+    </ul>
+
+    <p><strong>FUMA helped us understand our Alzheimer's genetics—but it's just the beginning.</strong></p>
+
+    <h2>Key Takeaways</h2>
+
+    <table>
+      <tr><th>Finding</th><th>Implication</th></tr>
+      <tr><td>APOE, TOMM40, APOC1, PVRL2</td><td>Key genes identified</td></tr>
+      <tr><td>75.1% non-coding</td><td>Regulatory variation is important</td></tr>
+      <tr><td>No eQTL evidence</td><td>Expression effects may be context-dependent</td></tr>
+      <tr><td>Experimental validation needed</td><td>Confirm functional effects</td></tr>
+    </table>
+
+    <!-- ===== SHARE SECTION ===== -->
+    <div class="share-section">
+      <p>📤 Share this article:</p>
+      <a href="https://twitter.com/intent/tweet?text=FUMA%3A%20The%20Swiss%20Army%20Knife%20of%20Functional%20Annotation&url=https://blog.researchacademy.uk/alzheimers-post-17.html" target="_blank" class="share-btn share-twitter">🐦 Twitter</a>
+      <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://blog.researchacademy.uk/alzheimers-post-17.html" target="_blank" class="share-btn share-linkedin">🔗 LinkedIn</a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=https://blog.researchacademy.uk/alzheimers-post-17.html" target="_blank" class="share-btn share-facebook">📘 Facebook</a>
+      <a href="https://wa.me/?text=FUMA%3A%20The%20Swiss%20Army%20Knife%20of%20Functional%20Annotation%20-%20https://blog.researchacademy.uk/alzheimers-post-17.html" target="_blank" class="share-btn share-whatsapp">💬 WhatsApp</a>
+    </div>
+
+    <!-- ===== REACTIONS ===== -->
+    <div class="reactions">
+      <p>What do you think?</p>
+      <div class="emoji-group">
+        <span title="Upvote">👍</span>
+        <span title="Funny">😂</span>
+        <span title="Love">❤️</span>
+        <span title="Surprised">😮</span>
+        <span title="Angry">😡</span>
+        <span title="Sad">😢</span>
+      </div>
+      <p class="response-count">0 Responses</p>
+    </div>
+
+    <!-- ===== DISQUS COMMENTS ===== -->
+    <div id="disqus_thread"></div>
+    <script>
+      var disqus_config = function () {
+        this.page.url = 'https://blog.researchacademy.uk/alzheimers-post-17.html';
+        this.page.identifier = 'alzheimers-post-17';
+      };
+      (function() {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://blog-researchacademy-uk.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+      })();
+    </script>
+    <noscript>
+      Please enable JavaScript to view the
+      <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+    </noscript>
+
+    <!-- ===== CITATION ===== -->
+    <div class="citation-box">
+      <p><strong>Osaghale L, Beshiru A, Subhan U. (2026).</strong> Replication-guided functional genomic prioritization of regulatory risk variants in Alzheimer's disease. <em>Gene Reports</em>. <strong>44</strong>: 102551.</p>
+      <p><strong>DOI:</strong> <a href="https://doi.org/10.1016/j.genrep.2026.102551" target="_blank">https://doi.org/10.1016/j.genrep.2026.102551</a></p>
+    </div>
+
+    <!-- ===== CODE AVAILABILITY ===== -->
+    <div class="citation-box" style="margin-top: 20px; border-left-color: #1B3A5C;">
+      <p><strong>Code Availability:</strong> <a href="https://github.com/Oselin1988/GWAS_AD" target="_blank">https://github.com/Oselin1988/GWAS_AD</a></p>
+    </div>
+
+    <hr>
+
+    <p><em>Next post: "eQTL Analysis: The Search for Expression Effects in Alzheimer's" — Coming soon!</em></p>
+
+    <a href="https://blog.researchacademy.uk" class="read-more">← Back to Blog Home</a>
+
+  </article>
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="container">
+    <p>
+      <img src="logo.png" alt="LD WORLD GLOBAL Logo" class="footer-logo">
+      © 2026 LD WORLD GLOBAL. All rights reserved.
+    </p>
+
+    <!-- ===== NEWSLETTER ===== -->
+    <div style="margin-top:20px; padding-top:20px; border-top:1px solid #2a4a6a;">
+      <h4 style="color:#fff;">📧 Subscribe to Our Newsletter</h4>
+      <p style="color:#a0c4e0; font-size:0.9rem;">Get the latest insights on AMR, bioinformatics, and AI in research.</p>
+
+      <div id="mc_embed_signup">
+        <form action="https://researchacademy.us13.list-manage.com/subscribe/post?u=acdfa9230fb7af42fe6e60e57&amp;id=762607cb5e&amp;f_id=00679cedf0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
+          <div id="mc_embed_signup_scroll">
+            <h2>Subscribe</h2>
+            <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
+            <div class="mc-field-group">
+              <label for="mce-EMAIL">Email Address <span class="asterisk">*</span></label>
+              <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required value="">
+            </div>
+            <div id="mce-responses" class="clear foot">
+              <div class="response" id="mce-error-response" style="display: none;"></div>
+              <div class="response" id="mce-success-response" style="display: none;"></div>
+            </div>
+            <div aria-hidden="true" style="position: absolute; left: -5000px;">
+              <input type="text" name="b_acdfa9230fb7af42fe6e60e57_762607cb5e" tabindex="-1" value="">
+            </div>
+            <div class="optionalParent">
+              <div class="clear foot">
+                <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button" value="Subscribe">
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <p style="margin-top:20px; font-size:0.85rem;">
+      <a href="https://researchacademy.uk">Home</a> &nbsp;·&nbsp;
+      <a href="https://blog.researchacademy.uk">Blog</a> &nbsp;·&nbsp;
+      <a href="mailto:contact@researchacademy.uk">Contact</a>
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
